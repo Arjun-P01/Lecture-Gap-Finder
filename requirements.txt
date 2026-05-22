@@ -2,6 +2,6 @@
 pymupdf>=1.24.5
 spacy>=3.7.5,<3.8
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
-openai==1.30.5
+openai>=1.52.0
 streamlit==1.35.0
 python-dotenv==1.0.1
