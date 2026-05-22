@@ -7,7 +7,7 @@ Upload a syllabus PDF and a lecture transcript — get back a prioritized list o
 
 ```bash
 # 1. Clone and enter the project
-git clone https://github.com/YOUR_USERNAME/lecture-gap-finder
+git clone https://github.com/Arjun-P01/Lecture-Gap-Finder
 cd lecture-gap-finder
 
 # 2. Create a virtual environment
