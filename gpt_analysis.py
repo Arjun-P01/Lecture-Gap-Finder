@@ -5,7 +5,8 @@ import json
 import os
 
 load_dotenv()
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+_api_key = st.secrets["OPENAI_API_KEY"] if "OPENAI_API_KEY" in st.secrets else os.environ.get("OPENAI_API_KEY")
+client = OpenAI(api_key=_api_key)
 
 @st.cache_data
 def get_gap_analysis(missing_topics: list[str]) -> list[dict]:
