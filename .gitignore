@@ -7,3 +7,5 @@ venv/
 cache/
 cache.json
 tempDir/
+test.py
+.DS_Store
