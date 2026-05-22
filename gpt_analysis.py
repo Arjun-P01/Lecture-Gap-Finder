@@ -21,13 +21,14 @@ For each topic, respond in JSON as a list of objects with exactly these fields:
 - "explanation": explain the topic in 2 sentences
 - "importance": how important it is for the exam, either "low", "mid", or "high"
 
-Respond with only the JSON array, no extra text.
+Respond with only a JSON object with a single key "topics" containing the array.
     """
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",
+        response_format={"type": "json_object"},
         messages=[{"role": "user", "content": prompt}]
     )
     text = response.choices[0].message.content
-    text = text[text.index("[") : text.rindex("]") + 1]
-    return json.loads(text)
+    data = json.loads(text)
+    return data["topics"] if isinstance(data, dict) else data
